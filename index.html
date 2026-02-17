@@ -3,205 +3,288 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prenájom elektrobicyklov Bratislava | Rýchlo, lacno a ekologicky 2026</title>
+  <title>Prenájom elektrobicyklov Bratislava | EcoRide 2026 – najlepšia cena</title>
   
-  <meta name="description" content="Prenájom elektrobicyklov v Bratislave – hodinový aj celodenný prenájom kvalitných e-bikov. Doprava po meste bez námahy, ekologicky a za super cenu. Rezervácia online alebo na mieste!">
-  <meta name="keywords" content="prenájom elektrobicyklov bratislava, požičovňa ebikov bratislava, elektrobicykel rent bratislava, e-bike prenájom, elektrokolá bratislava">
+  <meta name="description" content="Prenájom elektrobicyklov Bratislava – hodinový, celodenný aj víkendový rent kvalitných e-bikov. Ekologicky, rýchlo a pohodlne po meste aj okolí. Online rezervácia + výhodné ceny od 8 €/hod!">
+  
+  <meta name="keywords" content="prenájom elektrobicyklov bratislava, požičovňa elektrobicyklov bratislava, e-bike rent bratislava, elektrokolá požičovňa, prenájom ebike bratislava">
   <meta name="robots" content="index, follow"/>
-  <meta name="author" content="EcoRide Bratislava"/>
   
-  <!-- Open Graph pre zdieľanie na sociálnych sieťach -->
-  <meta property="og:title" content="Prenájom elektrobicyklov Bratislava | EcoRide"/>
-  <meta property="og:description" content="Objavte slobodu pohybu po Bratislave na moderných elektrobicykloch. Rýchla rezervácia, výhodné ceny, servis zdarma."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://tvoje-meno.github.io/elektrobicykle-bratislava/"/>
-  <meta property="og:image" content="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1200"/> <!-- nahraď reálnym obrázkom -->
+  <!-- Schema.org – často veľmi pomôže v SEO testoch -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "EcoRide – Prenájom elektrobicyklov Bratislava",
+    "description": "Prenájom moderných elektrobicyklov v Bratislave – hodinový, denný aj víkendový. Ekologická doprava po meste.",
+    "telephone": "+421905123456",
+    "email": "info@ecoride.sk",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Šafárikovo námestie 7",
+      "addressLocality": "Bratislava",
+      "addressCountry": "SK"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "priceRange": "$$",
+    "image": "https://images.unsplash.com/photo-1507035896870-6d47a3e3a6ab?w=1200"
+  }
+  </script>
 
   <style>
     :root {
-      --primary: #2ecc71;
-      --dark: #1e272e;
-      --light: #f5f6fa;
+      --primary: #27ae60;
+      --primary-dark: #219653;
+      --dark: #2c3e50;
+      --gray: #7f8c8d;
+      --light: #ecf0f1;
+      --white: #ffffff;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      color: #333;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.7;
+      color: #2d3436;
       background: var(--light);
-    }
-    header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1507035896870-6d47a3e3a6ab?w=1600');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 120px 20px 80px;
     }
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      background: rgba(30,39,46,0.9);
-      padding: 15px 0;
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       z-index: 1000;
-      backdrop-filter: blur(8px);
+      padding: 1rem 0;
     }
-    nav ul {
-      list-style: none;
+    nav .container {
       display: flex;
-      justify-content: center;
-      gap: 35px;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
     nav a {
-      color: white;
+      color: var(--dark);
       text-decoration: none;
       font-weight: 600;
-      transition: 0.3s;
+      margin-left: 2rem;
+      transition: color 0.3s;
     }
     nav a:hover { color: var(--primary); }
 
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    header {
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1558981806-ec9d8d087b42?w=1600&q=80');
+      background-size: cover;
+      background-position: center 30%;
+      color: white;
+      text-align: center;
+      padding: 180px 1rem 120px;
+    }
+    h1 {
+      font-size: 3.8rem;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.6);
+    }
+    .lead { font-size: 1.4rem; max-width: 800px; margin: 0 auto 2.5rem; opacity: 0.95; }
 
-    h1 { font-size: 3.4rem; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); }
-    h2 { font-size: 2.5rem; color: var(--dark); margin: 60px 0 25px; text-align: center; }
-    h3 { font-size: 1.8rem; color: #2f3542; margin: 40px 0 15px; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
-    section { padding: 40px 0; }
-    #hero p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 35px; }
+    section { padding: 80px 0; }
+    h2 { 
+      font-size: 2.6rem; 
+      color: var(--dark); 
+      text-align: center; 
+      margin-bottom: 2.5rem; 
+      position: relative; 
+    }
+    h2:after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    h3 { font-size: 1.9rem; color: var(--dark); margin: 2.5rem 0 1rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.35s, box-shadow 0.35s;
+    }
+    .card:hover { transform: translateY(-12px); box-shadow: 0 20px 50px rgba(0,0,0,0.12); }
+    .card img { width:100%; height:240px; object-fit:cover; }
+    .card-content { padding: 1.8rem; }
+
     .btn {
       display: inline-block;
       background: var(--primary);
       color: white;
-      padding: 16px 36px;
+      padding: 1rem 2.2rem;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: bold;
-      margin: 10px;
-      transition: 0.3s;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(39,174,96,0.3);
     }
-    .btn:hover { background: #27ae60; transform: translateY(-3px); }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin: 40px 0;
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(39,174,96,0.4);
     }
-    .card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-      transition: transform 0.3s;
-    }
-    .card:hover { transform: translateY(-10px); }
-    .card img { width:100%; height:220px; object-fit:cover; }
-    .card-content { padding: 25px; }
 
     table {
-      width: 100%; border-collapse: collapse; margin: 30px 0;
-      font-size: 1.1rem;
+      width: 100%; border-collapse: collapse; margin: 2.5rem 0;
+      font-size: 1.1rem; background: white; border-radius: 12px; overflow: hidden;
     }
-    th, td { padding: 14px; border-bottom: 1px solid #ddd; text-align: left; }
-    th { background: #2ecc71; color: white; }
+    th, td { padding: 1.2rem 1.5rem; text-align: left; border-bottom: 1px solid #eee; }
+    th { background: var(--primary); color: white; }
+
+    .faq details {
+      margin: 1.2rem 0;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    .faq summary {
+      padding: 1.3rem 1.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq p { padding: 0 1.8rem 1.8rem; }
 
     footer {
       background: var(--dark);
-      color: white;
+      color: #bdc3c7;
       text-align: center;
-      padding: 40px 20px;
-      margin-top: 60px;
+      padding: 3rem 1rem;
+      margin-top: 4rem;
     }
 
     @media (max-width: 768px) {
-      h1 { font-size: 2.6rem; }
-      nav ul { flex-direction: column; gap: 20px; }
-      .btn { padding: 14px 30px; }
+      h1 { font-size: 2.8rem; }
+      nav .container { flex-direction: column; gap: 1rem; }
+      nav a { margin: 0 1rem; }
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <ul>
-    <li><a href="#domov">Domov</a></li>
-    <li><a href="#cennik">Cenník</a></li>
-    <li><a href="#výhody">Výhody</a></li>
-    <li><a href="#kontakt">Kontakt & Rezervácia</a></li>
-  </ul>
+  <div class="container">
+    <div style="font-weight:700; font-size:1.4rem; color:var(--primary);">EcoRide</div>
+    <div>
+      <a href="#domov">Domov</a>
+      <a href="#výhody">Výhody</a>
+      <a href="#cennik">Cenník</a>
+      <a href="#faq">Často kladené otázky</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </div>
 </nav>
 
 <header id="domov">
   <div class="container">
     <h1>Prenájom elektrobicyklov Bratislava</h1>
-    <p>Objavte Bratislavu ekologicky, rýchlo a bez námahy. Moderné elektrobicykle, výhodné ceny, rýchla rezervácia online.</p>
-    <a href="#kontakt" class="btn">Rezervovať elektrobicykel teraz</a>
-    <a href="#cennik" class="btn" style="background:#3498db">Zobraziť aktuálny cenník</a>
+    <p class="lead">Najpohodlnejší spôsob, ako spoznať Bratislavu ekologicky a bez námahy. Moderné e-biky s dojazdom 70–100 km, rýchla rezervácia online a ceny už od 8 €/hod.</p>
+    <a href="#kontakt" class="btn" style="font-size:1.3rem; padding:1.2rem 3rem;">Rezervovať elektrobicykel teraz</a>
   </div>
 </header>
 
 <main class="container">
 
   <section id="výhody">
-    <h2>Prečo si vybrať práve náš prenájom elektrobicyklov?</h2>
+    <h2>Prečo si vybrať náš prenájom elektrobicyklov v Bratislave?</h2>
     <div class="grid">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1507035896870-6d47a3e3a6ab?w=800" alt="Elektrobicykel v bratislavskej Petržalke – ideálne na výlety po Dunaji">
+        <img src="https://images.unsplash.com/photo-1507035896870-6d47a3e3a6ab?w=800" alt="Elektrobicykel pri Dunaji – prenájom elektrobicyklov Bratislava ideálny na cyklotrasy">
         <div class="card-content">
-          <h3>Ekologická a zdravá mobilita</h3>
-          <p>Nulové emisie, menej áut v centre, viac pohybu na čerstvom vzduchu. Ideálne na presun po meste aj na výlety.</p>
+          <h3>Ekologická mobilita bez emisií</h3>
+          <p>Prispievate k čistejšiemu vzduchu v centre Bratislavy. Žiadne výfuky, menej hluku a viac zábavy z jazdy.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1558981806-8d6b5b29b2e2?w=800" alt="Moderný elektrobicykel s výkonnou batériou – dojazdom až 80 km">
+        <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800" alt="Výkonný elektrobicykel s batériou – dojazd až 100 km pri prenájme e-biku v Bratislave">
         <div class="card-content">
-          <h3>Dojazd až 80 km na jedno nabitie</h3>
-          <p>Kvalitné batérie Samsung/LG, dojazd 60–90 km podľa terénu a štýlu jazdy. Nabíjanie zadarmo u nás.</p>
+          <h3>Dojazd 70–100 km na jedno nabitie</h3>
+          <p>Kvalitné batérie, výkonné motory Bosch / Bafang. Vydržia aj na dlhší výlet do Devína alebo na Kolibu.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1625130561569-6d2357069889?w=800" alt="Zákazník si preberá elektrobicykel na požičovni v centre Bratislavy">
+        <img src="https://images.unsplash.com/photo-1625130561569-6d2357069889?w=800" alt="Zákazník si preberá elektrobicykel – požičovňa elektrobicyklov Bratislava Staré Mesto">
         <div class="card-content">
-          <h3>Rýchle a jednoduché požičanie</h3>
-          <p>Online rezervácia do 2 minút, vyzdvihnutie na viacerých miestach v Bratislave (Staré Mesto, Petržalka, Ružinov).</p>
+          <h3>Rýchle vyzdvihnutie na viacerých miestach</h3>
+          <p>Staré Mesto, Petržalka, Ružinov, Eurovea. Online rezervácia do 2 minút + možnosť vrátenia na inom mieste.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section id="cennik">
-    <h2>Cenník prenájmu elektrobicyklov 2026</h2>
+    <h2>Aktuálny cenník prenájmu elektrobicyklov 2026</h2>
     <table>
-      <tr><th>Čas prenájmu</th><th>Cena</th><th>Poznámka</th></tr>
-      <tr><td>1 hodina</td><td>8 €</td><td>minimálny prenájom</td></tr>
-      <tr><td>4 hodiny</td><td>24 €</td><td>-10 % zľava oproti hodinovému</td></tr>
-      <tr><td>Celý deň (8:00–20:00)</td><td>38 €</td><td>najvýhodnejšie</td></tr>
-      <tr><td>Víkend (piatok 18:00 – nedeľa 20:00)</td><td>89 €</td><td>ideálne na výlety</td></tr>
-      <tr><td>Detský e-bike / tandem</td><td>+6 € / hod</td><td>na vyžiadanie</td></tr>
+      <tr><th>Doba prenájmu</th><th>Cena</th><th>Poznámka / zľava</th></tr>
+      <tr><td>1 hodina</td><td>8 €</td><td>minimálny čas</td></tr>
+      <tr><td>4 hodiny</td><td>26 €</td><td>–13 % oproti hodinám</td></tr>
+      <tr><td>Celý deň (8:00–20:00)</td><td>39 €</td><td>najobľúbenejší variant</td></tr>
+      <tr><td>Víkend (pi 18:00 – ne 20:00)</td><td>89 €</td><td>ideálne na výlet</td></tr>
+      <tr><td>Príplatok tandem / detský e-bike</td><td>+7 € / hod</td><td>na vyžiadanie, obmedzený počet</td></tr>
     </table>
-    <p style="text-align:center; font-style:italic; margin-top:20px;">
-      Ceny platné od 1. januára 2026. Možnosť permanentky na mesiac – cena na vyžiadanie.
-    </p>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>Často kladené otázky o prenájme elektrobicyklov</h2>
+    <details>
+      <summary>Aký je dojazd elektrobicyklov?</summary>
+      <p>V závislosti od terénu, váhy jazdca a štýlu jazdy 70–100 km. V meste reálne 60–85 km.</p>
+    </details>
+    <details>
+      <summary>Potrebujem preukaz alebo vodičák?</summary>
+      <p>Nie – elektrobicykle do 25 km/h s pedálovaním (pedelec) sa riadia ako bežné bicykle.</p>
+    </details>
+    <details>
+      <summary>Môžem vrátiť bicykel na inom mieste?</summary>
+      <p>Áno, za malý príplatok 5–10 € (podľa vzdialenosti).</p>
+    </details>
+    <details>
+      <summary>Je možné rezervovať viacero bicyklov naraz?</summary>
+      <p>Samozrejme – stačí napísať alebo zavolať, radi pripravíme skupinovú zľavu.</p>
+    </details>
   </section>
 
   <section id="kontakt">
-    <h2>Kontaktujte nás a rezervujte si elektrobicykel</h2>
-    <p style="text-align:center; font-size:1.3rem; margin:30px 0;">
-      📍 Hlavné miesto vyzdvihnutia: Šafárikovo námestie 7, Bratislava – Staré Mesto<br>
+    <h2>Kontakt & Rezervácia elektrobicykla</h2>
+    <p style="text-align:center; font-size:1.4rem; margin:2rem 0; line-height:1.8;">
+      📍 Šafárikovo nám. 7, Bratislava – Staré Mesto (pri Eurovei)<br>
       📱 +421 905 123 456<br>
       ✉️ info@ecoride.sk<br><br>
-      <strong>Reálne otváracie hodiny:</strong> Pondelok – Nedeľa 8:00 – 20:00 (apríl – október)
+      Otváracie hodiny: denne 8:00 – 20:00 (apríl – október 2026)
     </p>
-    <div style="text-align:center; margin:50px 0;">
-      <a href="#domov" class="btn">Späť na začiatok stránky ↑</a>
+    <div style="text-align:center; margin:4rem 0;">
+      <a href="#domov" class="btn" style="background:#3498db;">Späť hore ↑</a>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <p>© 2026 EcoRide Bratislava – prenájom elektrobicyklov | Všetky práva vyhradené.<br>
-  Stránka vytvorená ako školský projekt – optimalizovaná pre SEO.</p>
+  <p>© 2026 EcoRide Bratislava – prenájom elektrobicyklov | Školský projekt optimalizovaný pre SEO</p>
 </footer>
 
 </body>
