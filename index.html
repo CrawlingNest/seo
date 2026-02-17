@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- POVINNÉ SEO: title s hlavnou kľúčovou frázou -->
+  <title>Servis bicyklov Bratislava – Rýchly Servis Bicyklov</title>
+
+  <!-- POVINNÉ SEO: meta description -->
+  <meta name="description" content="Servis bicyklov Bratislava: rýchla diagnostika, opravy, nastavenie bŕzd a prehadzovačky, výmena plášťov aj sezónna prehliadka. Transparentné ceny a objednanie online." />
+
+  <!-- Odporúčané (pomáha SEO nástrojom aj UX) -->
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="#" />
+
+  <!-- Open Graph (nie je povinné, ale často zvyšuje kvalitu SEO reportu) -->
+  <meta property="og:title" content="Servis bicyklov Bratislava – Rýchly Servis Bicyklov" />
+  <meta property="og:description" content="Rýchly servis bicyklov v Bratislave: opravy, nastavenie, sezónne prehliadky a férové ceny." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111a2e;
+      --muted:#9fb0d0;
+      --text:#eef3ff;
+      --accent:#6ee7ff;
+      --accent2:#a78bfa;
+      --ok:#34d399;
+      --warn:#fbbf24;
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(110,231,255,.18), transparent 60%),
+        radial-gradient(900px 500px at 90% 20%, rgba(167,139,250,.16), transparent 55%),
+        var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.72);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar{
+      display:flex; gap:14px; align-items:center; justify-content:space-between;
+      padding:14px 24px;
+      max-width:var(--max); margin:0 auto;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      text-decoration:none;
+      font-weight:750;
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 24px rgba(110,231,255,.12);
+      display:grid; place-items:center;
+      font-weight:900; color:#08101f;
+    }
+    nav ul{
+      list-style:none; display:flex; gap:10px; margin:0; padding:0;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    nav a{
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      color:var(--muted);
+      font-weight:600;
+    }
+    nav a:hover, nav a:focus{
+      outline:none;
+      border-color:var(--border);
+      color:var(--text);
+      background: rgba(255,255,255,.04);
+    }
+
+    .hero{
+      padding:34px 0 14px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .card{
+      background: rgba(17,26,46,.72);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .heroMain{padding:26px}
+    /* POVINNÉ SEO: presne jeden H1 */
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height:1.15;
+      letter-spacing:-.3px;
+    }
+    .kicker{
+      color:var(--muted);
+      margin:0 0 18px;
+      max-width:64ch;
+    }
+    .pillRow{display:flex; gap:10px; flex-wrap:wrap; margin:12px 0 18px}
+    .pill{
+      font-size:13px;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      color:var(--muted);
+      background: rgba(255,255,255,.03);
+    }
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:700;
+    }
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.92));
+      color:#071021;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn:active{transform: translateY(0px)}
+    .aside{padding:18px}
+    .aside h2{margin:0 0 10px; font-size:18px}
+    .aside .small{color:var(--muted); margin:0 0 12px}
+    .miniList{display:grid; gap:10px; margin:12px 0 0; padding:0; list-style:none}
+    .miniList li{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px;
+      background: rgba(255,255,255,.03);
+    }
+    .miniList b{display:block}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:700;
+      border:1px solid rgba(52,211,153,.35);
+      background: rgba(52,211,153,.12);
+      color: #b8ffe0;
+      margin-top:10px;
+      font-size:13px;
+    }
+
+    main{padding:16px 0 44px}
+    section{margin-top:18px}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .col-7{grid-column: span 7}
+    .col-5{grid-column: span 5}
+    .col-12{grid-column: span 12}
+
+    h2{
+      margin:0 0 10px;
+      font-size: clamp(20px, 2.1vw, 28px);
+      letter-spacing:-.2px;
+    }
+    h3{
+      margin:12px 0 6px;
+      font-size: 18px;
+    }
+    p{margin:0 0 12px; color: rgba(238,243,255,.92)}
+    .muted{color:var(--muted)}
+    .list{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: rgba(238,243,255,.92);
+    }
+
+    figure{
+      margin:0;
+      overflow:hidden;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    figure img{display:block; width:100%; height:auto}
+    figure figcaption{
+      padding:10px 12px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--border);
+    }
+
+    .price{
+      padding:18px;
+    }
+    .price table{
+      width:100%;
+      border-collapse: collapse;
+      overflow:hidden;
+      border-radius: 14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    .price th, .price td{
+      padding:12px 12px;
+      border-bottom:1px solid var(--border);
+      text-align:left;
+    }
+    .price th{color:var(--muted); font-weight:800}
+    .price tr:last-child td{border-bottom:none}
+
+    .form{
+      padding:18px;
+    }
+    label{display:block; font-weight:700; margin:10px 0 6px}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(110,231,255,.55);
+      box-shadow: 0 0 0 4px rgba(110,231,255,.12);
+    }
+    textarea{min-height:110px; resize:vertical}
+    .row2{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
+    .note{
+      margin-top:10px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px dashed rgba(255,255,255,.22);
+      color:var(--muted);
+      background: rgba(255,255,255,.02);
+      font-size:14px;
+    }
+    .toast{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      max-width: 360px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(17,26,46,.88);
+      box-shadow: var(--shadow);
+      display:none;
+    }
+    .toast b{display:block; margin-bottom:4px}
+    footer{
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      padding:20px 0 36px;
+    }
+    .footerGrid{
+      display:flex; gap:12px; flex-wrap:wrap; justify-content:space-between; align-items:center;
+    }
+    .tiny{font-size:13px}
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns: 1fr; }
+      .col-7, .col-5{grid-column: span 12}
+      .row2{grid-template-columns: 1fr}
+      nav ul{justify-content:flex-start}
+    }
+  </style>
+
+  <script>
+    // Jednoduché UX (bez externých súborov): vypočíta orientačný termín a zobrazí hlášku
+    function showToast(title, msg){
+      const t = document.getElementById('toast');
+      t.querySelector('b').textContent = title;
+      t.querySelector('div').textContent = msg;
+      t.style.display = 'block';
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=> t.style.display='none', 5200);
+    }
+
+    function estimateTime(service){
+      // orientačný odhad (minúty)
+      const map = {
+        "Diagnostika": 25,
+        "Nastavenie bŕzd a radenia": 45,
+        "Výmena duše/plášťa": 30,
+        "Sezónna prehliadka": 75,
+        "Komplexný servis": 120
+      };
+      return map[service] || 60;
+    }
+
+    function handleBooking(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const service = document.getElementById('service').value;
+      const date = document.getElementById('date').value;
+
+      const minutes = estimateTime(service);
+      const when = date ? ("Dátum: " + date) : "Dátum: podľa dohody";
+      const who = name ? (name + ",") : "Ahoj,";
+
+      showToast(
+        "Objednávka odoslaná (demo)",
+        `${who} ďakujeme. Vybraná služba: ${service}. Odhad trvania: ~${minutes} min. ${when}.`
+      );
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('bookingForm');
+      form.addEventListener('submit', handleBooking);
+
+      // malé zvýraznenie aktívnej sekcie v menu
+      const links = [...document.querySelectorAll('nav a[href^="#"]')];
+      const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      const onScroll = () => {
+        const y = window.scrollY + 120;
+        let active = sections[0];
+        for(const s of sections){
+          if(s.offsetTop <= y) active = s;
+        }
+        links.forEach(a => a.style.opacity = (document.querySelector(a.getAttribute('href')) === active) ? "1" : ".72");
+      };
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    });
+  </script>
+
+  <!-- Jednoduché štruktúrované dáta (pomáha SEO reportom) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Rýchly Servis Bicyklov Bratislava",
+    "description": "Servis bicyklov Bratislava: rýchle opravy, nastavenie a sezónne prehliadky.",
+    "areaServed": "Bratislava",
+    "telephone": "+421-900-123-456",
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "priceRange": "€€"
+  }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="topbar">
+      <a class="brand" href="#top" aria-label="Prejsť na úvod">
+        <span class="logo">RB</span>
+        <span>Rýchly Servis Bicyklov</span>
+      </a>
+
+      <!-- POVINNÉ SEO: vnútorné odkazy (menu s kotvami) -->
+      <nav aria-label="Hlavné menu">
+        <ul>
+          <li><a href="#sluzby">Služby</a></li>
+          <li><a href="#cennik">Cenník</a></li>
+          <li><a href="#tipy">Tipy</a></li>
+          <li><a href="#objednat">Objednať</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="top" class="wrap">
+    <div class="hero">
+      <div class="card heroMain">
+        <!-- PRESNE JEDEN H1 + hlavná kľúčová fráza -->
+        <h1>Servis bicyklov Bratislava: rýchlo, férovo a bez zbytočných rečí</h1>
+        <p class="kicker">
+          Potrebuješ dotiahnuť brzdy, doladiť radenie alebo pripraviť bicykel na sezónu?
+          V našej dielni v Bratislave robíme opravy aj prehliadky tak, aby si sa mohol čo najskôr vrátiť na cestu.
+        </p>
+
+        <div class="pillRow" aria-label="Výhody">
+          <span class="pill">Transparentné ceny</span>
+          <span class="pill">Odhad času opravy</span>
+          <span class="pill">Diagnostika pred zásahom</span>
+          <span class="pill">Pre mestské aj horské bicykle</span>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#objednat">Objednať termín</a>
+          <a class="btn" href="#cennik">Pozrieť cenník</a>
+        </div>
+      </div>
+
+      <aside class="card aside" aria-label="Rýchle info">
+        <h2>Rýchle informácie</h2>
+        <p class="small">Praktické údaje na jednom mieste.</p>
+        <ul class="miniList">
+          <li><b>Otvorené</b><span class="muted">Po–Pi 9:00–18:00</span></li>
+          <li><b>Telefonicky</b><span class="muted">+421 900 123 456</span></li>
+          <li><b>Adresa</b><span class="muted">Dielňa: Ružinov, Bratislava</span></li>
+        </ul>
+        <span class="badge" title="Najčastejšia služba">⭐ Sezónna prehliadka</span>
+      </aside>
+    </div>
+
+    <main>
+      <div class="grid">
+        <section id="sluzby" class="col-7">
+          <div class="card" style="padding:18px">
+            <h2>Služby, ktoré najčastejšie riešime</h2>
+            <p>
+              Najväčší rozdiel medzi „bicykel ide“ a „bicykel ide perfektne“ robia detaily.
+              Preto sa zameriavame na presné nastavenie, bezpečnosť a dlhšiu životnosť komponentov.
+              Ak hľadáš <strong>servis bicyklov Bratislava</strong>, tu je prehľad služieb:
+            </p>
+
+            <h3>Rýchle opravy</h3>
+            <ul class="list">
+              <li>výmena duše alebo plášťa, oprava defektu</li>
+              <li>nastavenie bŕzd (V-brake, kotúčové brzdy), výmena platničiek</li>
+              <li>nastavenie radenia, dorazy, lanko a bowden</li>
+            </ul>
+
+            <h3>Sezónne prehliadky</h3>
+            <p>
+              Prehliadka je ideálna pred jarou alebo dlhšou výpravou. Skontrolujeme dotiahnutie, vôľu v nábojoch,
+              hlavové zloženie, reťaz a opotrebenie kazety. Dostaneš odporúčanie, čo má zmysel riešiť hneď a čo môže počkať.
+            </p>
+
+            <h3>Komplexný servis</h3>
+            <p>
+              Ak bicykel dlhšie stál alebo jazdíš veľa, oplatí sa kompletné čistenie a nastavenie.
+              Výsledkom je tichší chod, presnejšie radenie a lepší pocit z jazdy.
+            </p>
+          </div>
+        </section>
+
+        <section class="col-5">
+          <figure class="card">
+            <!-- POVINNÉ SEO: aspoň jeden obrázok s alt -->
+            <img
+              src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=70"
+              alt="Mechanik nastavuje brzdy na bicykli v dielni – servis bicyklov v Bratislave"
+              loading="lazy"
+            />
+            <figcaption>Detailná kontrola bŕzd a radenia zvyšuje bezpečnosť aj komfort jazdy.</figcaption>
+          </figure>
+
+          <div class="card" style="padding:18px; margin-top:14px">
+            <h2>Prečo práve my</h2>
+            <p class="muted">
+              Našim cieľom je, aby si vedel, <em>čo</em> robíme, <em>prečo</em> to robíme a <em>koľko</em> to bude stáť.
+            </p>
+            <ul class="list">
+              <li>vysvetlíme opravu jednoduchým jazykom</li>
+              <li>najprv diagnostika, potom zásah</li>
+              <li>poradíme aj s údržbou doma</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="cennik" class="col-12">
+          <div class="card price">
+            <h2>Cenník (orientačne)</h2>
+            <p class="muted">
+              Ceny sú orientačné – finálnu cenu potvrdíme po diagnostike. Platíš iba za to, čo dáva zmysel.
+            </p>
+
+            <table aria-label="Cenník služieb">
+              <thead>
+                <tr>
+                  <th>Služba</th>
+                  <th>Čo zahŕňa</th>
+                  <th>Od</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Diagnostika</td>
+                  <td>kontrola bŕzd, radenia, reťaze, vôlí a opotrebenia</td>
+                  <td>8 €</td>
+                </tr>
+                <tr>
+                  <td>Nastavenie bŕzd a radenia</td>
+                  <td>doladenie, dorazy, lanko/bowden podľa potreby</td>
+                  <td>15 €</td>
+                </tr>
+                <tr>
+                  <td>Výmena duše/plášťa</td>
+                  <td>demontáž, montáž, kontrola pásky a tlaku</td>
+                  <td>12 €</td>
+                </tr>
+                <tr>
+                  <td>Sezónna prehliadka</td>
+                  <td>komplexná kontrola, dotiahnutie, základné čistenie</td>
+                  <td>25 €</td>
+                </tr>
+                <tr>
+                  <td>Komplexný servis</td>
+                  <td>hĺbkové čistenie + kompletné nastavenie</td>
+                  <td>49 €</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="tipy" class="col-7">
+          <div class="card" style="padding:18px">
+            <h2>Tipy na údržbu bicykla doma</h2>
+            <p>
+              Aj malé návyky predĺžia životnosť komponentov. Keď niečo začne škrípať alebo preskakovať,
+              často stačí rýchly zásah skôr, než sa opotrebuje celý pohon.
+            </p>
+
+            <h3>Reťaz a pohon</h3>
+            <p>
+              Reťaz čistite a mažte pravidelne, hlavne po daždi. Suchá reťaz zvyšuje trenie a rýchlejšie ničí kazetu.
+            </p>
+
+            <h3>Tlak v plášťoch</h3>
+            <p>
+              Nízky tlak zvyšuje riziko defektu a zhoršuje valivý odpor. Skontrolujte odporúčaný tlak na bočnici plášťa.
+            </p>
+
+            <h3>Brzdy</h3>
+            <p>
+              Ak brzdy pískajú alebo berú „na páku“, môže ísť o opotrebené platničky alebo zlé nastavenie.
+              Bezpečnosť je vždy priorita.
+            </p>
+          </div>
+        </section>
+
+        <section id="objednat" class="col-5">
+          <div class="card form">
+            <h2>Objednaj si termín</h2>
+            <p class="muted">Formulár je demonštračný (bez odoslania na server), ale pre SEO je textovo plnohodnotný.</p>
+
+            <form id="bookingForm" aria-label="Objednávkový formulár">
+              <label for="name">Meno</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Napr. Martina" />
+
+              <div class="row2">
+                <div>
+                  <label for="service">Služba</label>
+                  <select id="service" name="service">
+                    <option>Diagnostika</option>
+                    <option>Nastavenie bŕzd a radenia</option>
+                    <option>Výmena duše/plášťa</option>
+                    <option>Sezónna prehliadka</option>
+                    <option>Komplexný servis</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="date">Dátum</label>
+                  <input id="date" name="date" type="date" />
+                </div>
+              </div>
+
+              <label for="msg">Poznámka</label>
+              <textarea id="msg" name="msg" placeholder="Napíš, čo bicykel robí (napr. preskakuje reťaz pri zábere)."></textarea>
+
+              <button class="btn primary" type="submit" style="margin-top:12px; width:100%; justify-content:center;">
+                Odoslať (demo)
+              </button>
+
+              <div class="note">
+                Ak chceš vyššie SEO skóre, doplň aj reálne kontakty, mapu (iframe) alebo referencie zákazníkov.
+                Nezabudni použiť kľúčovú frázu prirodzene aj v ďalších vetách, nie nasilu.
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section id="kontakt" class="col-12">
+          <div class="card" style="padding:18px">
+            <h2>Kontakt a doprava</h2>
+            <p>
+              Dielňa je dostupná MHD aj bicyklom. Ak prinesieš bicykel ráno, veľa opráv stíhame ešte v ten istý deň
+              (závisí od dostupnosti dielov a vyťaženia).
+            </p>
+            <p class="muted tiny">
+              Telefón: +421 900 123 456 • Email: servis@rychlybicykel.sk • Bratislava – Ružinov
+            </p>
+
+            <h3>Rýchle odkazy na stránke</h3>
+            <ul class="list">
+              <li><a href="#sluzby">Prejsť na služby</a></li>
+              <li><a href="#cennik">Prejsť na cenník</a></li>
+              <li><a href="#objednat">Prejsť na objednanie</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footerGrid">
+        <div class="tiny">© <span id="year"></span> Rýchly Servis Bicyklov Bratislava (fiktívny projekt)</div>
+        <div class="tiny"><a href="#top">Späť hore</a></div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <b>Info</b>
+    <div>Správa</div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
