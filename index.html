@@ -25,14 +25,10 @@
   <meta name="twitter:description" content="Moderné e-biky na prenájom v BA – rýchlo, ekologicky, od 8 €/hod." />
   <meta name="twitter:image" content="https://crawlingnest.github.io/seo/images/header-bratislava-ebikes.jpg" />
 
-  <!-- FAVICON -->
-  <!-- Emoji verzia (bicykel) – funguje okamžite bez súborov -->
+  <!-- Favicon – emoji bicykel (funguje bez súborov) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚲</text></svg>">
-  
-  <!-- Klasický favicon (ak ho nahráš manuálne do rootu) -->
+  <!-- Ak nahráš vlastný favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  
-  <!-- Apple Touch Icon (ak nahráš 180×180 png do rootu) -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <!-- Schema.org -->
@@ -142,7 +138,6 @@
       transition: all 0.3s;
     }
     .btn:hover { background: var(--primary-dark); transform: translateY(-4px); }
-    /* ... zvyšok tvojho CSS si môžeš doplniť alebo nechať pôvodný ... */
   </style>
 </head>
 <body>
@@ -169,8 +164,32 @@
 </header>
 
 <main class="container">
-  <!-- Tu vlož svoje sekcie: výhody, cenník, ako to funguje, FAQ, kontakt atď. -->
-  <!-- Ak chceš, môžem ti sem doplniť celé sekcie z predchádzajúcich verzií -->
+
+  <section id="výhody">
+    <h2>Prečo si vybrať náš prenájom elektrobicyklov v Bratislave?</h2>
+    <p>Prenájom elektrobicyklov sa v Bratislave stáva čoraz populárnejší vďaka kombinácii ekológie, pohodlia a rýchlosti. Naše e-biky sú vybavené kvalitnými komponentmi, ktoré zvládnu aj kopcovitý terén Petržalky či cestu na Devín. Každý bicykel prechádza pravidelnou servisnou kontrolou, takže sa nemusíte obávať defektu uprostred výletu.</p>
+    <!-- sem môžeš dať grid s kartami, ako si mal predtým -->
+  </section>
+
+  <!-- príklad ďalšej sekcie -->
+  <section id="cennik">
+    <h2>Cenník</h2>
+    <p>Tu bude tvoj cenník...</p>
+  </section>
+
+  <section id="faq">
+    <h2>Často kladené otázky</h2>
+    <p>Tu budú FAQ...</p>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt & Rezervácia</h2>
+    <p>📍 Šafárikovo nám. 7, Bratislava<br>📱 +421 905 123 456<br>✉️ info@ecoride.sk</p>
+    <div style="text-align:center; margin:4rem 0;">
+      <a href="#domov" class="btn" style="background:#3498db;">Späť hore ↑</a>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -180,5 +199,6 @@
     <a href="https://www.cyklokoalicia.sk/" target="_blank" rel="noopener noreferrer">Cyklokoalícia.sk</a>
   </p>
 </footer>
+
 </body>
 </html>
